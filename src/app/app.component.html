@@ -1,0 +1,28 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<h1>Template Driven Forms</h1>
+<form #cform="ngForm" (ngSubmit)="onSubmit(cform)">
+  <p>
+    <label for="name">Name </label>
+    <input type="text" name="name" id="name" [(ngModel)]="name" />
+  </p>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+<h1>Reactive Forms</h1>
+<form [formGroup]="cform1" (ngSubmit)="onSubmit1(cform1)">
+  <p>
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      formControlName="name"
+      [(ngModel)]="name"
+    />
+  </p>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
